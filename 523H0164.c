@@ -80,8 +80,6 @@ void checkInput(const int n,const int dc,const int dg,const int ld,const char w[
         return;
     }
     
-    
-
     if (strcmp(w,"Rain") == 0){
         Rain(n,dc,dg,ld);
     }  
@@ -275,7 +273,7 @@ void Rain(const int n,const int dc,const int dg,const int ld){ // chua xong
             so_Banh_Chung = calculate_Banh_Chung_Rain(&so_Nep_Du,dc,dg,&ld_con_lai);
             so_Banh_Giay = calculate_Banh_Giay_Rain(&so_Nep_Du,dc,dg,&ld_con_lai);
         }
-        
+        // hinh nhu thieu 
     }
     else{
         so_Nep_Du = fmod(n1,so_nep_banh_chung) + fmod(n2,so_nep_banh_Giay);
@@ -452,7 +450,8 @@ void Sun(const int n,const int dc,const int dg,const int ld){
     ld_con_lai = ld_con_lai - X[H][G];
 
     if(so_Nep_Du <= 0 || ld_con_lai <= 0){
-        invalidInput(n);
+        so_Nep_Du = (int)so_Nep_Du;
+        invalidInput(so_Nep_Du);
         return ;
     }
     
